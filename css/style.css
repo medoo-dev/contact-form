@@ -1,0 +1,258 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  font-family: "Karla", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #dff1e7;
+}
+
+.success {
+  position: absolute;
+  top: -120px;
+  background-color: #2b4246;
+  padding: 20px;
+  border-radius: 6px;
+  color: #fff;
+}
+
+.success > div {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.success p {
+  font-weight: 300;
+}
+
+@keyframes success {
+  0% {
+    top: -120px;
+  }
+  70% {
+    top: 30px;
+  }
+  100% {
+    top: 20px;
+  }
+}
+@keyframes rev-success {
+  0% {
+    top: 20px;
+  }
+  70% {
+    top: 30px;
+  }
+  100% {
+    top: -120px;
+  }
+}
+
+.container {
+  background-color: #ffffff;
+  padding: 20px;
+  width: 700px;
+  border-radius: 6px;
+  margin: 0 20px;
+}
+
+.container h2 {
+  color: #2b4246;
+}
+
+.container form {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.container .error,
+.container .query-error,
+.container .check-error {
+  position: relative;
+  color: #d73c3c;
+  font-size: 12px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  visibility: hidden;
+  z-index: 0;
+}
+.container form > .con {
+  display: flex;
+  gap: 20px;
+}
+
+.container form > .con > div {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.container form > div label,
+.container form .query > p:first-child {
+  color: #6b7280;
+  font-size: 12px;
+}
+
+.container form input {
+  position: relative;
+  height: 40px;
+  margin-top: 6px;
+  border: 1px solid #87a3a6;
+  border-radius: 6px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  text-indent: 10px;
+  z-index: 5;
+}
+
+.container form input:focus {
+  outline-color: #87a3a6;
+  caret-color: #87a3a6;
+}
+
+.container form .query div {
+  display: flex;
+  gap: 20px !important;
+  align-items: center;
+  margin-top: 10px;
+}
+.container form .query label {
+  position: relative;
+  display: flex;
+  background-color: #fff;
+  width: 100%;
+  align-items: center;
+  gap: 10px;
+  padding-left: 10px;
+  cursor: pointer;
+  border-radius: 6px;
+  border: 1px solid #87a3a6;
+  z-index: 2;
+}
+
+.container form .query div input[type="radio"] {
+  margin: 0;
+  width: fit-content;
+  accent-color: #0c7d69;
+  cursor: pointer;
+}
+
+.container label.query-box:has(input:checked) {
+  border-color: #87a3a6;
+  color: #87a3a6;
+  border-width: 2px;
+}
+.container form .query label p {
+  font-size: 14px;
+  color: #2b4246;
+}
+.container > form textarea {
+  width: 100%;
+  margin-top: 10px;
+  min-height: 200px;
+  padding: 10px;
+  border: 1px solid #87a3a6; /* ← ده أهم سطر */
+  border-radius: 6px;
+  resize: none;
+  outline: none;
+  background: white;
+  color: #2b4246;
+  font-family: inherit;
+}
+
+.container form textarea::-webkit-scrollbar {
+  width: 0;
+}
+
+.container form textarea:focus {
+  border: 2px solid #10b981 !important;
+}
+
+.container form .check-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  width: fit-content;
+}
+
+.container form .check-box input {
+  width: 15px;
+  margin: 0;
+  accent-color: #0c7d69;
+}
+
+.container form .check-box p {
+  font-size: clamp(14px, 2vw, 16px);
+  color: #2b4246;
+}
+
+.container form input[type="submit"] {
+  border: none;
+  background-color: #0c7d69;
+  color: #fff;
+  font-size: 18px;
+  transition: 0.2s;
+}
+
+.container form input[type="submit"]:hover {
+  background-color: #0c7d69;
+  cursor: pointer;
+}
+
+.attribution {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: clamp(12px, 2vw, 15px);
+  width: fit-content;
+  text-align: center;
+}
+
+.attribution a {
+  text-decoration: none;
+  color: #2b4246;
+}
+
+@media (max-width: 499px) {
+  body {
+    display: block;
+    padding-top: 20px;
+  }
+  .container {
+    width: calc(100% - 20px);
+    margin: auto;
+  }
+
+  .container .con,
+  .container .query1 {
+    flex-direction: column;
+    width: 100%;
+    gap: 0 !important;
+  }
+
+  .container .con div,
+  .container .con div p {
+    margin: 0 !important;
+  }
+
+  .attribution {
+    position: relative;
+    text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    bottom: revert;
+  }
+}

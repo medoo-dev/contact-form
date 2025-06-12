@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Frontend Mentor | Contact form</title>
+  </head>
+  <body>
+    <div class="success">
+      <div class="text">
+        <img src="./assets/images/icon-success-check.svg" alt="success" />
+        <h3>Message Sent</h3>
+      </div>
+      <p>Thanks for completing the form. We`ll be in touch soon!</p>
+    </div>
+    <div class="container">
+      <h2>Contact Us</h2>
+      <form action="index.html" method="get">
+        <div class="con">
+          <div>
+            <label for="first">First Name &nbsp;*</label>
+            <br />
+            <input type="text" name="first-name" id="first" class="inp" />
+            <p class="error">This field is required</p>
+          </div>
+          <div>
+            <label for="last">Last Name &nbsp;*</label>
+            <br />
+            <input type="text" name="last-name" id="last" class="inp" />
+            <p class="error">This field is required</p>
+          </div>
+        </div>
+        <div>
+          <label for="email">Email &nbsp;*</label>
+          <br />
+          <input type="email" name="email" id="email" class="inp" />
+          <p class="error">Please enter a valid email address</p>
+        </div>
+        <div class="query">
+          <p>Query Type &nbsp;*</p>
+          <div class="query1">
+            <label for="one" class="query-box">
+              <input
+                type="radio"
+                name="query"
+                id="one"
+                class="rad"
+                value="general"
+              />
+              <p>General Enquiry</p>
+            </label>
+
+            <label for="two" class="query-box">
+              <input
+                type="radio"
+                name="query"
+                id="two"
+                class="rad"
+                value="support"
+              />
+              <p>Support Request</p>
+            </label>
+          </div>
+          <p class="query-error">Please select a query type</p>
+        </div>
+
+        <div>
+          <label for="message">Message &nbsp;*</label>
+          <textarea name="message" id="message" class="inp" value=""></textarea>
+          <p class="error">This field is required</p>
+        </div>
+
+        <div>
+          <label for="check" class="check-box">
+            <input type="checkbox" name="check" id="check" class="inp" />
+            <p>I consent to being contacted by the team</p>
+          </label>
+          <div class="check-error">This Check Is Required</div>
+        </div>
+
+        <input type="submit" value="Submit" />
+      </form>
+    </div>
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+      Coded by
+      <a href="https://github.com/medoo-dev" target="_blank">Ahmad Reda</a>.
+    </div>
+    <script src="./js/script.js"></script>
+  </body>
+</html>

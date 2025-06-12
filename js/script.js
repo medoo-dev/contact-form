@@ -20,6 +20,18 @@ form.onsubmit = function (e) {
       inp.style.borderColor = "#d1d5db";
     }
 
+    inp.onfocus = function () {
+      inp.style.borderColor = "#d1d5db";
+      errors[i].style.visibility = "hidden";
+    };
+    inp.onblur = function () {
+      if (inp.value.trim() === "") {
+        errors[i].style.visibility = "visible";
+        inp.style.borderColor = "#d1d5db";
+      } else {
+        errors[i].style.visibility = "hidden";
+      }
+    };
     // Check Boxes Conditions
     let checkbox = document.querySelector(".check-error");
     if (!form["check"].checked) {
@@ -29,11 +41,27 @@ form.onsubmit = function (e) {
       checkbox.style.visibility = "hidden";
     }
 
-    let radios = document.querySelectorAll(".rad");
+    form["check"].onclick = function () {
+      if (!form["check"].checked) {
+        checkbox.style.visibility = "visible";
+      } else {
+        checkbox.style.visibility = "hidden";
+      }
+    };
 
+    let radios = document.querySelectorAll(".rad");
     // Radios Conditions
     radios.forEach(function (radio) {
       let queryError = document.querySelector(".query-error");
+
+      radio.onclick = function () {
+        if (txt === "") {
+          queryError.style.visibility = "hidden";
+        } else {
+          queryError.style.visibility = "visible";
+        }
+      };
+
       if (radio.checked) {
         txt = radio.value;
       }
